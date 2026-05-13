@@ -27,11 +27,11 @@ export default function Header({ query, setQuery, onFocusSearch, totalDocs, onBr
       <button
         className="header__brand"
         onClick={onBrandClick}
-        aria-label="Back to The Compliance Codex landing page"
+        aria-label="Back to GSTverse landing page"
       >
         <div className="header__mark" aria-hidden>§</div>
         <div className="header__title">
-          <span className="header__name">The Compliance Codex</span>
+          <span className="header__name">GSTverse</span>
           <span className="header__sub">Vol. I · Edition May 2026</span>
         </div>
       </button>

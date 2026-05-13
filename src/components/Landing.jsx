@@ -88,7 +88,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
         <div className="masthead__row">
           <div className="masthead__pub">
             <span className="masthead__mark" aria-hidden>§</span>
-            <span className="masthead__name">The Compliance Codex</span>
+            <span className="masthead__name">GSTverse</span>
           </div>
           <div className="masthead__rule" aria-hidden>
             <span className="dot" />
@@ -109,7 +109,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
             <a href="#colophon">Colophon</a>
           </nav>
           <button className="masthead__enter" onClick={onEnter}>
-            Enter the Codex <span aria-hidden>→</span>
+            Enter GSTverse <span aria-hidden>→</span>
           </button>
         </div>
       </header>
@@ -135,8 +135,8 @@ export default function Landing({ onEnter, onJumpToDoc }) {
         </div>
 
         <h1 className="hero__headline">
-          <span className="hero__line">The codex</span>
-          <span className="hero__line">of advanced</span>
+          <span className="hero__line">The annotated</span>
+          <span className="hero__line">universe of</span>
           <span className="hero__line">
             GST compliance<em className="hero__period">.</em>
           </span>
@@ -159,7 +159,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
 
         <div className="hero__ctas">
           <button className="btn btn--primary" onClick={onEnter}>
-            <span>Enter the Codex</span>
+            <span>Enter GSTverse</span>
             <span className="btn__arrow" aria-hidden>→</span>
           </button>
           <a href="#doctrines" className="btn btn--ghost">
@@ -401,7 +401,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
 
         <p className="instrument__hint">
           <span className="instrument__hint-kbd">⌘K</span> opens the search from
-          anywhere in the Codex.
+          anywhere in GSTverse.
         </p>
       </Section>
 
@@ -472,7 +472,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
           Thirty-five chapters wait at the other side of this page.
         </p>
         <button className="btn btn--primary btn--xl" onClick={onEnter}>
-          <span>Enter the Codex</span>
+          <span>Enter GSTverse</span>
           <span className="btn__arrow" aria-hidden>→</span>
         </button>
         <p className="final__legal">
@@ -488,7 +488,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
         <div className="colophon__top">
           <div className="colophon__brand">
             <span className="colophon__mark">§</span>
-            <span className="colophon__name">The Compliance Codex</span>
+            <span className="colophon__name">GSTverse</span>
           </div>
           <div className="colophon__rule" />
         </div>
@@ -528,7 +528,7 @@ export default function Landing({ onEnter, onJumpToDoc }) {
         </div>
 
         <div className="colophon__strip">
-          <span>The Compliance Codex</span>
+          <span>GSTverse</span>
           <span className="colophon__strip-mid">VOL · I · MAY · MMXXVI</span>
           <span>{ALL_DOCS.length} chapters indexed</span>
         </div>
