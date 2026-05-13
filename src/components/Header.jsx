@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function Header({ query, setQuery, onFocusSearch, totalDocs }) {
+export default function Header({ query, setQuery, onFocusSearch, totalDocs, onBrandClick }) {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -24,22 +24,17 @@ export default function Header({ query, setQuery, onFocusSearch, totalDocs }) {
 
   return (
     <header className="header">
-      <div className="header__brand">
-        <div className="header__mark" aria-hidden>
-          <svg viewBox="0 0 24 24" width="22" height="22">
-            <path
-              d="M4 5h16M4 12h10M4 19h16"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
+      <button
+        className="header__brand"
+        onClick={onBrandClick}
+        aria-label="Back to The Compliance Codex landing page"
+      >
+        <div className="header__mark" aria-hidden>§</div>
         <div className="header__title">
-          <span className="header__name">GST Compliance Reader</span>
-          <span className="header__sub">CGST · IGST · Maharashtra SGST — as of May 2026</span>
+          <span className="header__name">The Compliance Codex</span>
+          <span className="header__sub">Vol. I · Edition May 2026</span>
         </div>
-      </div>
+      </button>
 
       <div className="header__search">
         <span className="header__search-icon" aria-hidden>

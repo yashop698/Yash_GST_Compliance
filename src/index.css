@@ -1,19 +1,29 @@
 :root {
-  --bg: #faf8f3;
+  /* Parchment palette — landing + reader share these */
+  --paper: #f2ede2;
+  --paper-deep: #ebe5d4;
+  --vellum: #faf6eb;
   --surface: #ffffff;
-  --surface-2: #f3f0e8;
-  --surface-3: #ebe7dc;
-  --border: #e5e1d8;
-  --border-strong: #d6d1c4;
-  --text: #1a1814;
-  --text-soft: #3a352d;
-  --muted: #6b6558;
-  --dim: #95907f;
+  --surface-2: #f3eee2;
+  --surface-3: #e9e2d0;
 
-  --ink: #0f172a;
-  --highlight: #fff3a4;
-  --highlight-edge: #f1d756;
+  --ink: #1a1714;
+  --ink-soft: #3a352d;
+  --muted: #7a6f5e;
+  --dim: #a89e8a;
+  --border: #d9d2c0;
+  --border-strong: #c4bba2;
 
+  /* Editorial accents */
+  --vermillion: #b83d26;
+  --vermillion-soft: #d97a64;
+  --vermillion-deep: #8e2d1a;
+  --vermillion-wash: rgba(184, 61, 38, 0.07);
+  --indigo: #1e3a5f;
+  --highlight: #f6e58d;
+  --highlight-edge: #d4b837;
+
+  /* Topic accents (kept) */
   --rcm: #1d4ed8;
   --rcm-bg: #dbeafe;
   --itc: #b91c1c;
@@ -23,11 +33,14 @@
   --shr: #6d28d9;
   --shr-bg: #ede9fe;
 
-  --serif: 'Instrument Serif', 'Iowan Old Style', 'Apple Garamond', 'Georgia', serif;
+  /* Type stack */
+  --display: 'Bodoni Moda', 'Bodoni 72', 'Didot', 'Iowan Old Style', 'Georgia', serif;
+  --serif: 'Newsreader', 'Iowan Old Style', 'Georgia', serif;
   --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
   --header-h: 64px;
   --sidebar-w: 280px;
@@ -41,17 +54,22 @@
 
 html, body, #root {
   height: 100%;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--sans);
-  font-size: 15.5px;
+  font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'kern';
 }
 
 body {
+  overflow: hidden;
+}
+
+#root {
   overflow: hidden;
 }
 
@@ -60,12 +78,16 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 input { font: inherit; }
 img, video { display: block; max-width: 100%; }
 
-::selection { background: var(--highlight); color: var(--text); }
+::selection { background: var(--vermillion); color: var(--vellum); }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; border: 2px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+  border: 2px solid var(--paper);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 :focus-visible {
   outline: 2px solid var(--ink);
@@ -75,7 +97,7 @@ img, video { display: block; max-width: 100%; }
 
 mark {
   background: var(--highlight);
-  color: var(--text);
+  color: var(--ink);
   padding: 1px 2px;
   border-radius: 2px;
   box-shadow: 0 0 0 1px var(--highlight-edge) inset;
@@ -84,6 +106,8 @@ mark {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

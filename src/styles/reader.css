@@ -10,7 +10,7 @@
     "header header"
     "sidebar reader";
   height: 100vh;
-  background: var(--bg);
+  background: var(--paper);
 }
 
 /* ============================================================
@@ -35,7 +35,11 @@
   align-items: center;
   gap: 12px;
   min-width: 0;
+  cursor: pointer;
+  transition: opacity 120ms;
 }
+
+.header__brand:hover { opacity: 0.7; }
 
 .header__mark {
   display: grid;
@@ -43,9 +47,14 @@
   width: 36px;
   height: 36px;
   background: var(--ink);
-  color: var(--surface);
+  color: var(--vermillion);
   border-radius: 6px;
   flex: 0 0 36px;
+  font-family: var(--display);
+  font-size: 24px;
+  line-height: 1;
+  font-style: italic;
+  padding-bottom: 4px;
 }
 
 .header__title {
@@ -55,11 +64,12 @@
 }
 
 .header__name {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 19px;
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--text);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,7 +90,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--bg);
+  background: var(--paper);
   border: 1px solid var(--border-strong);
   border-radius: 10px;
   padding: 0 12px 0 38px;
@@ -108,7 +118,7 @@
   background: transparent;
   outline: none;
   font-size: 14px;
-  color: var(--text);
+  color: var(--ink);
 }
 
 .header__search-input::placeholder {
@@ -171,7 +181,7 @@
   background: var(--surface-2);
   padding: 1px 6px;
   border-radius: 4px;
-  color: var(--text);
+  color: var(--ink);
   margin: 0 2px;
 }
 
@@ -188,7 +198,7 @@
 }
 
 .results__head strong {
-  color: var(--text);
+  color: var(--ink);
   font-weight: 600;
 }
 
@@ -202,7 +212,7 @@
 }
 
 .results__close:hover {
-  color: var(--text);
+  color: var(--ink);
   border-color: var(--border-strong);
 }
 
@@ -217,7 +227,7 @@
   background: var(--surface-2);
   padding: 1px 6px;
   border-radius: 4px;
-  color: var(--text);
+  color: var(--ink);
 }
 
 .results__list {
@@ -262,7 +272,7 @@
   flex: 1;
   font-size: 14.5px;
   font-weight: 500;
-  color: var(--text);
+  color: var(--ink);
   letter-spacing: -0.005em;
 }
 
@@ -276,7 +286,7 @@
 .result__snippet {
   margin-top: 6px;
   font-size: 13px;
-  color: var(--text-soft);
+  color: var(--ink-soft);
   line-height: 1.5;
   padding-left: 38px;
 }
@@ -306,7 +316,7 @@
 .sidebar__intro-label {
   font-family: var(--serif);
   font-size: 17px;
-  color: var(--text);
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 
@@ -350,7 +360,7 @@
   text-align: left;
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--text);
+  color: var(--ink);
   letter-spacing: -0.005em;
 }
 
@@ -397,14 +407,14 @@
   margin-left: 22px;
   border-radius: 0;
   font-size: 13px;
-  color: var(--text-soft);
+  color: var(--ink-soft);
   text-align: left;
   transition: background-color 80ms, color 80ms;
 }
 
 .docitem:hover {
   background: var(--surface-2);
-  color: var(--text);
+  color: var(--ink);
 }
 
 .docitem.is-active {
@@ -436,7 +446,7 @@
 .reader {
   grid-area: reader;
   overflow-y: auto;
-  background: var(--bg);
+  background: var(--paper);
 }
 
 .reader__article {
@@ -468,40 +478,43 @@
 }
 
 .reader__crumbs-topic {
-  color: var(--text-soft);
+  color: var(--ink-soft);
 }
 
 .reader__crumbs-doc {
-  color: var(--text);
+  color: var(--ink);
   font-weight: 500;
 }
 
 .reader__content {
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.7;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17.5px;
+  line-height: 1.65;
+  font-feature-settings: 'kern', 'liga', 'onum';
+  font-variation-settings: 'opsz' 18;
 }
 
 .reader__content h1 {
-  font-family: var(--serif);
-  font-size: 42px;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  margin: 0 0 24px;
-  color: var(--text);
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  margin: 0 0 28px;
+  color: var(--ink);
 }
 
 .reader__content h2 {
-  font-family: var(--serif);
-  font-size: 28px;
-  line-height: 1.18;
-  letter-spacing: -0.015em;
-  font-weight: 400;
-  margin: 56px 0 16px;
-  padding-top: 20px;
+  font-family: var(--display);
+  font-size: clamp(28px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+  margin: 56px 0 18px;
+  padding-top: 24px;
   border-top: 1px solid var(--border);
-  color: var(--text);
+  color: var(--ink);
 }
 
 .reader__content h2:first-child {
@@ -511,23 +524,24 @@
 }
 
 .reader__content h3 {
-  font-family: var(--sans);
-  font-size: 17.5px;
+  font-family: var(--serif);
+  font-size: 21px;
   line-height: 1.3;
   font-weight: 600;
-  letter-spacing: -0.005em;
-  margin: 36px 0 10px;
-  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 38px 0 10px;
+  color: var(--ink);
+  font-variation-settings: 'opsz' 24;
 }
 
 .reader__content h4 {
   font-family: var(--sans);
-  font-size: 14.5px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin: 28px 0 8px;
+  color: var(--vermillion);
+  margin: 32px 0 10px;
 }
 
 .reader__content p {
@@ -550,12 +564,12 @@
 
 .reader__content strong {
   font-weight: 600;
-  color: var(--text);
+  color: var(--ink);
 }
 
 .reader__content em {
   font-style: italic;
-  color: var(--text-soft);
+  color: var(--ink-soft);
 }
 
 .reader__content code {
@@ -564,7 +578,7 @@
   background: var(--surface-2);
   padding: 1px 6px;
   border-radius: 4px;
-  color: var(--text);
+  color: var(--ink);
   border: 1px solid var(--border);
 }
 
@@ -590,7 +604,7 @@
   margin: 0 0 18px;
   padding: 8px 0 8px 18px;
   border-left: 3px solid var(--border-strong);
-  color: var(--text-soft);
+  color: var(--ink-soft);
   font-style: italic;
 }
 
@@ -669,11 +683,11 @@
   gap: 6px;
   font-family: var(--mono);
   font-size: 11px;
-  background: var(--bg);
+  background: var(--paper);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 3px 8px;
-  color: var(--text-soft);
+  color: var(--ink-soft);
 }
 
 .metatag__k {
@@ -687,7 +701,7 @@
 }
 
 .metatag__v {
-  color: var(--text);
+  color: var(--ink);
 }
 
 .mh-badge {
@@ -733,7 +747,7 @@
   font-family: var(--serif);
   font-size: 32px;
   font-weight: 400;
-  color: var(--text);
+  color: var(--ink);
   margin-bottom: 12px;
   letter-spacing: -0.015em;
 }
@@ -822,7 +836,7 @@
   background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: 8px;
-  color: var(--text);
+  color: var(--ink);
 }
 
 @media (max-width: 960px) {
